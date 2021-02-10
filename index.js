@@ -54,5 +54,8 @@ myCarousel.addEventListener('slid.bs.carousel', function () {
   gsap.timeline().kill(sceneOne())
   gsap.timeline().restart(sceneOne())
 
+  // trying to have the animation restart everytime the carosel is clicked
+  //  or auto sldies to the next item 
+
   console.log("slid");
 })
