@@ -13,6 +13,16 @@ gsap.set("#Sneeze", {x:10, y:35});
 // sceneTwo stage
 gsap.set("#sally_plays", {opacity:0});
 
+// sceneThree Stage
+gsap.set("#After_comes", {opacity:0});
+gsap.set("#sally_talks", {opacity:0});
+gsap.set("#Sally_Side_back", {opacity:0});
+
+// sceneFour stage
+gsap.set("#back_to_school", {opacity:0});
+gsap.set("#Sally_front_4", {opacity:0});
+gsap.set("#Sally_side_back_4", {opacity:0});
+gsap.set("#question_mark", {opacity:0})
 
 
 function sceneOne(){
@@ -45,6 +55,36 @@ tl.to("#Ana_2",{y:-10, yoyo:true, repeat:3,duration:.2,delay:.5}, "<");
 return tl;
 }
 
+
+// have sick bubbles pulse later when you have more time for final
+function sceneThree() {
+var tl = gsap.timeline();
+tl.fromTo("#After_comes", {opacity:0}, {opacity:1, duration:2});
+tl.fromTo("#Sally_Side_3", {x:-200}, {x:0, duration:4}, "<");
+tl.fromTo("#sally_talks", {opacity:0}, {opacity:1, duration:2});
+tl.to("#Sally_Side_3",{y:-5, duration:.3, yoyo:true,repeat:1}, "<");
+tl.to("#Teacher-2",{y:-5, duration:.3, yoyo:true,repeat:1});
+tl.to("#Sally_Side_3", {opacity:0, duration:.5});
+tl.fromTo("#Sally_Side_back", {opacity:0}, {opacity:100, duration:.5}, "<");
+tl.to("#Sally_Side_back", {x:-200, duration:4});
+return tl;
+}
+
+function sceneFour(){
+	var tl = gsap.timeline();
+	tl.fromTo("#back_to_school", {opacity:0}, {opacity:1, duration:2});
+	tl.to("#Sally_side_4", {x:305,duration:2},"<");
+	tl.to("#Sally_side_4", {opacity:0, duration:.5});
+	tl.to("#Sally_side_back_4", {opacity:1, duration:.5},"<");
+	tl.to("#Sally_side_4", {opacity:1, duration:.5});
+	tl.to("#Sally_side_back_4", {opacity:0, duration:.5},"<")
+	tl.to("#Sally_side_4", {opacity:0, duration:.5});
+	tl.to("#Sally_front_4", {opacity:1, duration:.5},"<");
+	tl.to("#question_mark", {opacity:1, duration:.5});
+	return tl;
+}
+
+
 // posssible make master timeline then restart it? or is the end delay and end sceneOne
 
 // function bigTime(){
@@ -58,9 +98,13 @@ return tl;
 
 // just using thsi code to run the animaiton
 // will take out later and plug into carousel trigger below
+// make sure to turn other scenes back on!!
 var master = gsap.timeline();
-master.add(sceneOne())
+master.add(sceneOne());
 master.add(sceneTwo(), "+=1.5");
+master.add(sceneThree(), "+=1.5");
+master.add(sceneFour(), "+=.5");
+
 
 
 
