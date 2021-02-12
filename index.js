@@ -22,8 +22,15 @@ gsap.set("#Sally_Side_back", {opacity:0});
 gsap.set("#back_to_school", {opacity:0});
 gsap.set("#Sally_front_4", {opacity:0});
 gsap.set("#Sally_side_back_4", {opacity:0});
-gsap.set("#question_mark", {opacity:0})
+gsap.set("#question_mark", {opacity:0});
 
+//sceneFive Stage
+gsap.set("#wenthome", {opacity:0});
+gsap.set("#wheremonique", {opacity:0});
+
+//sceneSix Stage
+gsap.set("#Severalweeks_6", {opacity:0});
+gsap.set("#sally_side_back_6", {opacity:0});
 
 function sceneOne(){
 	var tl = gsap.timeline();
@@ -84,6 +91,39 @@ function sceneFour(){
 	return tl;
 }
 
+function sceneFive(){
+	var tl = gsap.timeline();
+	tl.fromTo("#wheremonique", {opacity:0}, {opacity:1, duration:1.5});
+	tl.to("#Sally_front_5",{y:-5, duration:.3, yoyo:true,repeat:1}, "<");
+	tl.to("#wheremonique", {opacity:0, duration:0, delay:.5})
+	tl.fromTo("#wenthome", {opacity:0}, {opacity:1, duration:1.5});
+	tl.to("#Ana_5",{y:-5, duration:.3, yoyo:true,repeat:1}, "<");
+	return tl;
+}
+
+function sceneSix(){
+	var tl = gsap.timeline();
+
+
+	tl.to("#Severalweeks_6", {opacity:1, duration:2});
+
+
+	return tl;
+}
+
+	function walkToBus() {
+		var tl = gsap.timeline({repeat: 2, repeatDelay: .3});
+
+		tl.fromTo("#Sally_side_6", {opacity:0}, {opacity:1, duration:.5}, "<");
+		tl.to("#Sally_side_6", {x:400, duration:2});
+		tl.to("#Sally_side_6", {opacity:0, duration:.5});
+		tl.to("#sally_side_back_6", {opacity:1, duration:.5});
+		tl.to("#sally_side_back_6", {x:-360, duration:2});
+		tl.to("#sally_side_back_6", {opacity:0,duration:.5});
+
+		return tl;
+	}
+
 
 // posssible make master timeline then restart it? or is the end delay and end sceneOne
 
@@ -99,26 +139,43 @@ function sceneFour(){
 // just using thsi code to run the animaiton
 // will take out later and plug into carousel trigger below
 // make sure to turn other scenes back on!!
+// var master = gsap.timeline();
+// master.add(sceneOne());
+// master.add(sceneTwo(), "+=1.5");
+// master.add(sceneThree(), "+=1.5");
+// master.add(sceneFour(), "+=.5");
+// master.add(sceneFive(), "+=1");
+// master.add(sceneSix(), "+=1");
+// master.add(walkToBus(), "<");
+
 var master = gsap.timeline();
+
 master.add(sceneOne());
-master.add(sceneTwo(), "+=1.5");
-master.add(sceneThree(), "+=1.5");
-master.add(sceneFour(), "+=.5");
+master.add(sceneTwo(), "<");
+master.add(sceneThree(), "<");
+master.add(sceneFour(), "<");
+master.add(sceneFive(), "<");
+master.add(sceneSix(), "<");
+master.add(walkToBus(), "<");
 
 
 
 
 var myCarousel = document.getElementById('carouselExampleControls')
 
-// myCarousel.addEventListener('slid.bs.carousel', function () {
-//
-// 	// tl.restart(sceneOne(), sceneTwo());
-//
+myCarousel.addEventListener('slid.bs.carousel', function () {
+
+	// tl.restart(sceneOne(), sceneTwo());
+
 // gsap.timeline().restart(bigTime());
-//
-//
-//
-//
-//
-// 	console.log("slid");
-// })
+
+
+master.restart()
+
+
+
+
+
+
+	console.log("slid");
+})
