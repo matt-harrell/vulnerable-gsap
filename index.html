@@ -1,8 +1,7 @@
 <!doctype html>
+
 <html lang="en">
-
 <head>
-
   <meta charset="utf-8">
 
   <title>Vulnerable</title>
@@ -13,14 +12,17 @@
 
 </head>
 
+<!-- <body onload="master()"> -->
+
+<!-- <body onload="sceneTwo(),sceneOne()"> -->
+
 <body>
-    <div class ="container-fluid">
 
+  <div class ="container-fluid">
     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" data-bs-pause="false">
-
     <div class="carousel-inner">
 
-      <div class="carousel-item active" data-bs-interval="12000">
+      <div class="carousel-item active" data-bs-interval="12000" id="one">
 
 
 
@@ -1670,7 +1672,7 @@
 
 <!-- add active back to carousel-item after finishing scene -->
 
-      <div class="carousel-item" data-bs-interval="7000">
+      <div class="carousel-item" data-bs-interval="6000" id="two">
 
 
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="812" height="374.94" viewBox="0 0 812 374.94">
@@ -2226,7 +2228,7 @@
       </div>
 
 
-      <div class="carousel-item" data-bs-interval="11000">
+      <div class="carousel-item" data-bs-interval="11000" id="three">
 
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="812.87" height="375.8" viewBox="0 0 812.87 375.8">
           <defs>
@@ -3918,7 +3920,7 @@
 
       </div>
 
-      <div class="carousel-item" data-bs-interval="7000">
+      <div class="carousel-item" data-bs-interval="7000" id="four">
 
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="811.24" height="375.27" viewBox="0 0 811.24 375.27">
           <defs>
@@ -5037,7 +5039,7 @@
 
       </div>
 
-      <div class="carousel-item" data-bs-interval="5000">
+      <div class="carousel-item" data-bs-interval="6000" id="five">
 
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="812.25" height="375.25" viewBox="0 0 812.25 375.25">
           <defs>
@@ -5224,7 +5226,7 @@
 
       </div>
 
-      <div class="carousel-item" data-bs-interval="13000">
+      <div class="carousel-item" data-bs-interval="15000" id="six">
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="812.9" height="375.25" viewBox="0 0 812.9 375.25">
           <defs>
             <linearGradient id="linear-gradient_6" x1="406.12" y1="375.13" x2="406.12" y2="0.12" gradientUnits="userSpaceOnUse">
@@ -7740,6 +7742,7 @@
 
       </div>
 
+
     </div>
     <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -7801,7 +7804,7 @@
 
 
 
-<script type="text/javascript" src="jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="jquery-3.5.1.min.js">  </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/CSSRulePlugin.min.js"></script>
