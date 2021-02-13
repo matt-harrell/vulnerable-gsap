@@ -33,7 +33,16 @@ gsap.set("#Severalweeks_6", {opacity:0});
 gsap.set("#sally_side_back_6", {opacity:0});
 gsap.set("#Sally_side_6", {opacity:0});
 
-	var tl = gsap.timeline();
+// sceneSeven Stage
+gsap.set("#Sally_side_7", {opacity:0});
+gsap.set("#Sally_side_talk_7", {opacity:0});
+// gsap.set("#Monique_side_7", {opacity:0});
+// gsap.set("#Monique_side_back_7", {opacity:0});
+gsap.set("#hospital", {opacity:0});
+gsap.set("#Yourback", {opacity:0});
+gsap.set("#xpoint", {opacity:0});
+
+var tl = gsap.timeline();
 
 function sceneOne(){
 
@@ -83,7 +92,8 @@ tl3.fromTo("#Sally_Side_back", {opacity:0}, {opacity:100, duration:.5}, "<");
 tl3.to("#Sally_Side_back", {x:-200, duration:4});
 return tl3;
 }
-	var tl4 = gsap.timeline();
+
+var tl4 = gsap.timeline();
 function sceneFour(){
 
 	tl4.fromTo("#back_to_school", {opacity:0}, {opacity:1, duration:2,delay:1.5});
@@ -98,7 +108,8 @@ function sceneFour(){
 
 	return tl4;
 }
-	var tl5 = gsap.timeline();
+
+var tl5 = gsap.timeline();
 function sceneFive(){
 
 	tl5.fromTo("#wheremonique", {opacity:0}, {opacity:1, duration:1.5, delay:1.3});
@@ -106,6 +117,7 @@ function sceneFive(){
 	tl5.to("#wheremonique", {opacity:0, duration:0, delay:.5})
 	tl5.fromTo("#wenthome", {opacity:0}, {opacity:1, duration:1.5});
 	tl5.to("#Ana_5",{y:-5, duration:.3, yoyo:true,repeat:1}, "<");
+	tl5.fromTo("#wenthome", {opacity:0}, {opacity:0, duration:.001, delay:2.5});
 	return tl5;
 }
 
@@ -156,6 +168,26 @@ function sceneSix(){
 
 
 	return tl6;
+}
+
+
+var tl7 = gsap.timeline();
+function sceneSeven(){
+	tl7.to("#Monique_side_7", {x:50, duration:3,delay:1});
+	tl7.fromTo("#Sally_side_7",{opacity:0, x:-260},{opacity:1, duration:.3},"<");
+	tl7.to("#Sally_side_7", {x:0, duration:3}, ">-.2");
+	tl7.to("#Sally_side_7", {y:-5,duration:.1, yoyo:true, repeat:1},">-.0001")
+	tl7.to("#xpoint", {opacity:1, duration:.04}, ">-.03");
+	tl7.to("#xpoint", {opacity:0, duration:.04,delay:1});
+	tl7.fromTo("#Monique_side_back_7", {x:170, opacity:0}, {opacity:1, duration:.3})
+	tl7.to("#Monique_side_7", {opacity:0,duration:.3}, "<")
+	// tl7.set("#Monique_side_back_7", {x:170})
+	tl7.to("#Monique_side_back_7", {x:0, duration:1});
+	tl7.to("#Sally_side_7", {x:142, duration:1}, "<")
+	tl7.to("#Yourback", {opacity:1, duration:.3})
+	tl7.to("#Yourback", {opacity:0, duration:.3,delay:2})
+	tl7.to("#hospital", {opacity:1, duration:.3})
+	tl7.to("#hospital", {opacity:0, duration:.001,delay:4})
 }
 
 
@@ -299,6 +331,13 @@ $('#carouselExampleControls').on('slide.bs.carousel', function onSlide (ev) {
 			tl6.restart(true)
 
 			break;
+
+		case "seven":
+
+			sceneSeven()
+			tl7.restart()
+
+				break;
 
 	  }
 
