@@ -247,7 +247,7 @@ function sceneSix(){
 
 
 
-
+https://stackoverflow.com/questions/30361799/how-to-target-bootstrap-carousels-active-slide
 
 $('#carouselExampleControls').on('slide.bs.carousel', function onSlide (ev) {
   var id = ev.relatedTarget.id;
