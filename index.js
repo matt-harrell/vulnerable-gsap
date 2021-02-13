@@ -42,6 +42,16 @@ gsap.set("#hospital", {opacity:0});
 gsap.set("#Yourback", {opacity:0});
 gsap.set("#xpoint", {opacity:0});
 
+// sceneEight stage
+gsap.set("#Monique_side_8", {opacity:0});
+gsap.set("#mustscary", {opacity:0});
+gsap.set("#hugs", {opacity:0});
+
+// sceneNine stage
+gsap.set("#anavax", {opacity:0});
+gsap.set("#wonder", {opacity:0});
+gsap.set("#Bubble", {opacity:0});
+
 var tl = gsap.timeline();
 
 function sceneOne(){
@@ -139,30 +149,22 @@ function sceneSix(){
 
 
 
-	tl6.fromTo("#Severalweeks_6",{opacity:0}, {opacity:1, duration:2, delay:1});
-	tl6.to("#Sally_side_6", {opacity:1, duration:.5},"<");
-	tl6.to("#Sally_side_6", {x:400, duration:2});
-	tl6.to("#Sally_side_6", {opacity:0, duration:.5});
-	tl6.fromTo("#sally_side_back_6",{opacity:0}, {opacity:1, duration:.5});
-	tl6.to("#sally_side_back_6", {x:-360, duration:2.3});
-	tl6.to("#sally_side_back_6", {opacity:0,duration:.5});
+	tl6.fromTo("#Severalweeks_6",{opacity:0}, {opacity:1, duration:.5, delay:.5});
+	tl6.to("#Sally_side_6", {opacity:1, duration:.3},"<");
+	tl6.to("#Sally_side_6", {x:400, duration:1});
+	tl6.to("#Sally_side_6", {opacity:0, duration:.3});
+	tl6.fromTo("#sally_side_back_6",{opacity:0}, {opacity:1, duration:.3});
+	tl6.to("#sally_side_back_6", {x:-360, duration:1});
+	tl6.to("#sally_side_back_6", {opacity:0,duration:.3});
 
-	// tl6.invalidate("#Sally_side_6","#sally_side_back_6");
-	//
-	//
-	// tl6.to("#Sally_side_6", {opacity:1, duration:.5});
-	// tl6.to("#Sally_side_6", {x:400, duration:2});
-	// tl6.to("#Sally_side_6", {opacity:0, duration:.5});
-	// tl6.to("#sally_side_back_6", {opacity:1, duration:.5});
-	// tl6.to("#sally_side_back_6", {x:-360, duration:2.3});
-	// tl6.to("#sally_side_back_6", {opacity:0,duration:.5});
 
-	tl6.fromTo("#Sally_side_6",{x:0}, {opacity:1, duration:.5});
-	tl6.fromTo("#Sally_side_6",{x:0}, {x:400, duration:2});
-	tl6.to("#Sally_side_6", {opacity:0, duration:.5});
-	tl6.fromTo("#sally_side_back_6", {x:0}, {opacity:1, duration:.5});
-	tl6.to("#sally_side_back_6", {x:-360, duration:2.3});
-	tl6.to("#sally_side_back_6", {opacity:0, duration:.5});
+
+	tl6.fromTo("#Sally_side_6",{x:0}, {opacity:1, duration:.3});
+	tl6.fromTo("#Sally_side_6",{x:0}, {x:400, duration:1});
+	tl6.to("#Sally_side_6", {opacity:0, duration:.3});
+	tl6.fromTo("#sally_side_back_6", {x:0}, {opacity:1, duration:.3});
+	tl6.to("#sally_side_back_6", {x:-360, duration:1});
+	tl6.to("#sally_side_back_6", {opacity:0, duration:.3});
 
 
 
@@ -183,15 +185,55 @@ function sceneSeven(){
 	tl7.to("#Monique_side_7", {opacity:0,duration:.3}, "<")
 	// tl7.set("#Monique_side_back_7", {x:170})
 	tl7.to("#Monique_side_back_7", {x:0, duration:1});
-	tl7.to("#Sally_side_7", {x:142, duration:1}, "<")
-	tl7.to("#Yourback", {opacity:1, duration:.3})
-	tl7.to("#Yourback", {opacity:0, duration:.3,delay:2})
-	tl7.to("#hospital", {opacity:1, duration:.3})
-	tl7.to("#hospital", {opacity:0, duration:.001,delay:4})
+	tl7.to("#Sally_side_7", {x:142, duration:1}, "<");
+	tl7.to("#Yourback", {opacity:1, duration:.3});
+	tl7.to("#Yourback", {opacity:0, duration:.3,delay:2});
+	tl7.to("#hospital", {opacity:1, duration:.3});
+	tl7.to("#hospital", {opacity:0, duration:.001,delay:4});
+
+	return tl7;
 }
 
 
+var tl8 = gsap.timeline();
+function sceneEight(){
+	tl8.to("#mustscary",{opacity:1, duration:.3, delay:1});
+	tl8.to("#Sally_side_talk_8", {y:-5,duration:.3, yoyo:true, repeat:1},"<");
+	tl8.to("#mustscary",{opacity:0, duration:.3, delay:2});
 
+	tl8.to("#Sally_side_talk_8", {x:50, duration:.5});
+
+	tl8.to("#hugs",{opacity:1, duration:.3},"<");
+	tl8.to("#Sally_side_talk_8", {x:0, duration:.5,delay:1});
+	tl8.to("#Monique_side_back_8", {opacity:0, duration:.3});
+	tl8.to("#Monique_side_8", {opacity:1, duration:.3},"<");
+	tl8.to("#Sally_side_talk_8",{x:200,duration:7});
+	tl8.fromTo("#Monique_side_8", {x:0}, {x:180,duration:6},"<");
+
+
+	// do I need this or is just causing problem with .restart()
+	return tl8;
+}
+
+
+var tl9 = gsap.timeline();
+function sceneNine(){
+tl9.fromTo("#Virus", {opacity:1},{opacity:0, duration:1,repeat:-1, delay:1});
+tl9.fromTo("#Virus_2", {opacity:0},{opacity:1, duration:1,repeat:-1},"<");
+tl9.fromTo("#wonder", {opacity:0}, {opacity:1, duration:.3,delay:1},"<");
+tl9.to("#Sally_front_9",{y:-10, yoyo:true, repeat:-1,duration:.2},"<");
+tl9.to("#Monique_9",{y:-10, yoyo:true, repeat:-1,duration:.2,delay:.5},"<");
+tl9.to("#Ana_9",{y:-10, yoyo:true, repeat:-1,duration:.2,delay:.5},"<");
+tl9.to("#Sally_front_9",{y:-10, yoyo:true, repeat:-1,duration:.2});
+tl9.to("#Monique_9",{y:-10, yoyo:true, repeat:-1,duration:.2,delay:.5}, "<");
+tl9.to("#Ana_9",{y:-10, yoyo:true, repeat:-1,duration:.2,delay:.5}, "<");
+tl9.to("#wonder", {opacity:0, duration:.3,delay:2});
+tl9.to("#anavax", {opacity:1, duration:.3});
+tl9.to("#Bubble", {opacity:1, duration:.3});
+tl9.to("#anavax", {opacity:0, duration:.001, delay:3});
+tl9.to("#Bubble", {opacity:0, duration:.001},"<");
+return tl2;
+}
 
 // posssible make master timeline then restart it? or is the end delay and end sceneOne
 
@@ -338,6 +380,23 @@ $('#carouselExampleControls').on('slide.bs.carousel', function onSlide (ev) {
 			tl7.restart()
 
 				break;
+
+		case "eight":
+
+			sceneEight()
+			tl8.restart()
+
+				break;
+
+		case "nine":
+
+				sceneNine()
+
+				tl9.restart(true)
+
+
+					break;
+
 
 	  }
 
