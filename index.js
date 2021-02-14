@@ -52,6 +52,22 @@ gsap.set("#anavax", {opacity:0});
 gsap.set("#wonder", {opacity:0});
 gsap.set("#Bubble", {opacity:0});
 
+// sceneTen stage
+gsap.set("#immuno", {opacity:0});
+gsap.set("#Bubble_10", {opacity:0});
+gsap.set("#Ana_10", {opacity:0});
+gsap.set("#child1", {opacity:0});
+gsap.set("#child2", {opacity:0});
+gsap.set("#child3", {opacity:0});
+gsap.set("#ick_1", {opacity:0});
+gsap.set("#ick_2", {opacity:0});
+gsap.set("#ick_3", {opacity:0});
+gsap.set("#ick_4", {opacity:0});
+
+// sceneEleven Stage
+gsap.set("#protect", {opacity:0});
+gsap.set("#Monique_11", {opacity:0});
+
 var tl = gsap.timeline();
 
 function sceneOne(){
@@ -235,6 +251,35 @@ tl9.to("#Bubble", {opacity:0, duration:.001},"<");
 return tl2;
 }
 
+var tl10 = gsap.timeline();
+function sceneTen(){
+
+tl10.to("#immuno",{opacity:1, duration:.3, delay:1});
+tl10.to("#child2", {opacity:1, duration:.3, delay:.5});
+tl10.to("#Ana_10", {opacity:1, duration:.3},"<");
+tl10.to("#Bubble_10", {opacity:1, duration:.3, delay:1});
+tl10.to("#child1", {opacity:1, duration:.3, delay:.5});
+tl10.to("#child3", {opacity:1, duration:.3},"<");
+tl10.fromTo("#ick_1", {opacity:0},{opacity:1, duration:.5,repeat:-1, delay:1,yoyo:true});
+tl10.fromTo("#ick_3", {opacity:0},{opacity:1, duration:.5,repeat:-1,yoyo:true},"<");
+tl10.fromTo("#ick_2", {opacity:0},{opacity:1, duration:.5,repeat:-1, yoyo:true});
+tl10.fromTo("#ick_4", {opacity:0},{opacity:1, duration:.5,repeat:-1, yoyo:true},"<");
+
+
+
+return tl10
+
+}
+
+var tl11 = gsap.timeline();
+function sceneEleven(){
+
+tl11.fromTo("#protect", {opacity:0}, {opacity:1, duration:2, delay:1});
+tl11.fromTo("#Monique_11", {opacity:0}, {opacity:1, duration:2, delay:.5},"<");
+
+return tl11
+}
+
 // posssible make master timeline then restart it? or is the end delay and end sceneOne
 
 // function bigTime(){
@@ -395,7 +440,25 @@ $('#carouselExampleControls').on('slide.bs.carousel', function onSlide (ev) {
 				tl9.restart(true)
 
 
-					break;
+				break;
+
+	  case "ten":
+
+				sceneTen()
+
+				tl10.restart(true)
+
+
+				break;
+
+		case "eleven":
+
+				sceneEleven()
+
+				tl11.restart(true)
+
+
+				break;
 
 
 	  }
