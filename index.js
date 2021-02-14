@@ -1,5 +1,9 @@
 // var tl = gsap.timeline();
 
+// sceneZero stage
+gsap.set("#title_i", {opacity:0});
+gsap.set("#Monique_i", {opacity:0});
+
 
 // sceneOne stage
 gsap.set("#Sally_front", {opacity:0});
@@ -67,6 +71,20 @@ gsap.set("#ick_4", {opacity:0});
 // sceneEleven Stage
 gsap.set("#protect", {opacity:0});
 gsap.set("#Monique_11", {opacity:0});
+gsap.set("#Thank_you", {opacity:0});
+
+var tli = gsap.timeline();
+
+function sceneZero() {
+
+	tli.fromTo("#title_i", {opacity:0, y:-50}, {opacity:1, y:0, duration:3,delay:1});
+	tli.fromTo("#Monique_i", {opacity:0}, {opacity:1,duration:3},"<");
+
+	return tli;
+
+}
+
+sceneZero()
 
 var tl = gsap.timeline();
 
@@ -88,7 +106,7 @@ function sceneOne(){
 	return tl;
 }
 
-sceneOne()
+
 
 
 var tl2 = gsap.timeline();
@@ -276,7 +294,9 @@ function sceneEleven(){
 
 tl11.fromTo("#protect", {opacity:0}, {opacity:1, duration:2, delay:1});
 tl11.fromTo("#Monique_11", {opacity:0}, {opacity:1, duration:2, delay:.5},"<");
-
+tl11.to("#protect", {opacity:0, duration:.5, delay:1});
+tl11.fromTo("#Thank_you", {opacity:0}, {opacity:1, duration:1,delay:.5},"<");
+tl11.to("#Thank_you",{opacity:0, duration:1,delay:3},"<");
 return tl11
 }
 
@@ -372,8 +392,18 @@ $('#carouselExampleControls').on('slide.bs.carousel', function onSlide (ev) {
   var id = ev.relatedTarget.id;
   switch (id) {
 
+		case "zero":
+
+				sceneZero()
+
+				tli.restart(true)
+
+
+				break;
+
     case "one":
 
+			sceneOne()
 			tl.restart(true)
 
       break;
@@ -459,6 +489,8 @@ $('#carouselExampleControls').on('slide.bs.carousel', function onSlide (ev) {
 
 
 				break;
+
+
 
 
 	  }
